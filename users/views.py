@@ -41,7 +41,7 @@ def signup_view(request):
         user.student_id = student_id
         user.profile_img = profile_img
         user.save()
-        return redirect("user:login")
+        return redirect("user:email_auth")
     return render(request, "users/signup.html")
 
 
@@ -69,4 +69,6 @@ class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
     template_name = 'users/password_reset_confirm.html'
     success_url = reverse_lazy('login')
 
+def email_auth(request):
+    return render(request, "users/email_auth.html")
 # todo password_reset_email.html 템플릿 파일 만들기
