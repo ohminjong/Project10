@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from .models import User
+from . import models
 # Create your views here.
 
 def login_view(request):
@@ -22,18 +23,21 @@ def logout_view(request):
 
 def signup_view(request):
     if request.method =="POST":
-        print(request.POST)
+        print(111, request.POST) 
+        profile_img = request.FILES["profile_img"]
         username = request.POST["username"]
         password = request.POST["password"]
-        firstname = request.POST["firstname"]
+        firstname= request.POST["firstname"]
         lastname = request.POST["lastname"]
         email = request.POST["email"]
         student_id = request.POST["student_id"]
-
         user=User.objects.create_user(username, email, password)
-        user.last_name = lastname
-        user.first_name = firstname
+        user.firstname = firstname
+        user.lastname = lastname
         user.student_id = student_id
+        user.profile_img = profile_img
         user.save()
         return redirect("user:login")
     return render(request, "users/signup.html")
+
+
