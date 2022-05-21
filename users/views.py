@@ -44,6 +44,9 @@ def signup_view(request):
         return redirect("user:login")
     return render(request, "users/signup.html")
 
+def email_auth(request):
+    return render(request, "users/email_auth.html")
+
 
 class PasswordResetView(auth_views.PasswordResetView):
     """

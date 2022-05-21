@@ -1,4 +1,5 @@
 회원가입페이지
+<form>
 <br>
 <form action "" method="POST" enctype="multipart/form-data">
     {%csrf_token%}
@@ -23,5 +24,6 @@
     <input name="student_id" type="text">
     <p>인증파일</p>
     <input name="profile_img" type="file">
-    <button type="button" onclick="location.href='/board/';"> 회원가입 </button>
+<!--    <input type="submit" value="회원가입">-->
+    <button type="button" onclick="location.href='user:email_auth';"> 회원가입 </button>
 </form>
