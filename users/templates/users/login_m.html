@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>login</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<br>
+
+<body>
+{% if user.is_authenticated%}
+<div id="center">
+<a href = "{% url 'index'%}"><img src="MBchaTIng.jpg" width="25%"></a>
+<br>
+<h2><strong>{{ user.username}}</strong>님 환영합니다!</h2>
+<a href = "{% url 'user:logout'%}">로그아웃</a>
+<a href = "/board/">게시판 이동</a>
+</div>
+
+{% else%}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div id="center">
+        <a href = "{{% url 'index' %}"><img src="MBchaTIng.jpg" width="25%"></a><br> <!-- 로고 이미지. 클릭시 메인 페이지 이동 -->
+        <input name="username" placeholder="아이디" type="text" style="width: 200px; height: 30px;"><br>
+        <input name="password" placeholder="비밀번호" type="password" style="width: 200px; height: 30px;"><br>
+        <input type="submit" style="color:white; background:purple; width: 206.8px;height: 36.8px; border: solid purple;" value="로그인">
+        <br><br>
+        <a href = "{% url 'user:signup'%}">회원가입</a>
+        <a href = "{% url 'user:password_reset'%}">비밀번호 찾기</a>
+        </div>
+    </form>
+{% endif %}
+</body>
