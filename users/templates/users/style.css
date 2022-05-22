@@ -1,0 +1,30 @@
+a{
+  font-size:12px;
+  color:black;
+  text-decoration:none;
+  text-align: center;
+}
+
+
+#center{
+  text-align: center;
+}
+
+body{
+  margin: 50px;
+}
+
+h1{
+  font-size:45px;
+  text-align:center;
+}
+
+h2{
+  font-size:20px;
+  text-align:center;
+}
+
+button{
+  color: black;
+  background: white;
+}
