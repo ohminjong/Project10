@@ -1,0 +1,87 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+html {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body {
+    width: 50%;
+}
+
+input{
+    border: 2px solid black;
+    border-radius: 3px;
+    line-height: 35px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+label{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.container {
+    padding: 10px;
+}
+
+div {
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+.title {
+    text-align: center;
+    font-weight: 700;
+    color: black;
+}
+.username input {
+    width: 100%;
+}
+.email input {
+    width: 100%;
+}
+.name input {
+    width: 100%;
+}
+.password input {
+    width: 100%;
+}
+.mbti input {
+    width: 100%;
+}
+.student_id input{
+    width: 100%
+}
+.profile_img input{
+    width: 100%
+}
+.phone input{
+    width: 100%;
+}
+.submit_button button {
+    width: 100%;
+    cursor:pointer;
+}
+button{
+    cursor: pointer;
+    height: 40px;
+    background-color: purple;
+    color: white;
+    border: solid purple;
+}
+.error{
+    font-size: 3px;
+    height: 22px;
+    color:red;
+    font-weight: 700;
+}
