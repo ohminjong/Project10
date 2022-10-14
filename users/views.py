@@ -19,7 +19,7 @@ def login_view(request):
             login(request, user)
         else:
             print("인증실패")
-    return render(request, "users/login.html" )
+    return render(request, "users/login_m.html" )
 
 def logout_view(request):
     logout(request)
@@ -27,7 +27,7 @@ def logout_view(request):
 
 def signup_view(request):
     if request.method =="POST":
-        print(111, request.POST) 
+        print(111, request.POST)
         profile_img = request.FILES["profile_img"]
         username = request.POST["username"]
         password = request.POST["password"]
@@ -42,14 +42,14 @@ def signup_view(request):
         user.profile_img = profile_img
         user.save()
         return redirect("user:email_auth")
-    return render(request, "users/signup.html")
+    return render(request, "users/signup_J.html")
 
 
 class PasswordResetView(auth_views.PasswordResetView):
     """
     비밀번호 초기화 - 사용자ID, email 입력
     """
-    template_name = 'users/password_reset.html'
+    template_name = 'users/password_reset_J.html'
     # success_url = reverse_lazy('password_reset_done')
     form_class = PasswordResetForm
     email_template_name = 'registration/password_reset_email.html'
@@ -59,16 +59,16 @@ class PasswordResetDoneView(auth_views.PasswordResetDoneView):
     """
     비밀번호 초기화 - 메일 전송 완료
     """
-    template_name = 'users/password_reset_done.html'
+    template_name = 'users/password_reset_done_m.html'
 
 
 class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
     """
     비밀번호 초기화 - 새로운 비밀번호 입력
     """
-    template_name = 'users/password_reset_confirm.html'
+    template_name = 'users/password_reset_confirm_m.html'
     success_url = reverse_lazy('login')
 
 def email_auth(request):
-    return render(request, "users/email_auth.html")
+    return render(request, "users/email_auth_m.html")
 # todo password_reset_email.html 템플릿 파일 만들기
