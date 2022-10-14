@@ -1,42 +1,50 @@
 function signUpCheck(){
 
-    let id = document.getElementById("username").value
-    let password = document.getElementById("password").value
-    let name = document.getElementById("name").value
-    let phone = document.getElementById("phone").value
-    let mbti = document.getElementById("mbti").value
-    let email = document.getElementById("email").value
-    let student_id = document.getElementById("student_id").value
-    let profile_img = document.getElementById("profile_img").value
-    let check = true;
+    let username = document.getElementById("username")
+    let password = document.getElementById("password")
+    let name = document.getElementById("name")
+    let phone = document.getElementById("phone")
+    let mbti = document.getElementById("mbti")
+    let email = document.getElementById("email")
+    let student_id = document.getElementById("student_id")
+    let profile_img = document.getElementById("profile_img")
 
-    // 이메일 유효 확인
-    if(email.includes('@')){
-        let emailId = email.split('@')[0]
-        let emailServer = email.split('@')[1]
-        if(emailId === "" || emailServer === ""){
-          document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
-          check = false
-        }
-        else{
-          document.getElementById("emailError").innerHTML=""
-        }
+    if(username.value = ""){
+      alert("ID 를 입력하세요.");
+      username.focus();
+      return false;
     }
-    else{
-        document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
-        check = false
+    if(password.value = ""){
+      alert("비밀번호를 입력하세요.");
+      password.focus();
+      return false;
     }
-
-    // 이름 유효 확인
-    if(name===""){
-        document.getElementById("nameError").innerHTML="이름을 입력해주세요."
-        check = false
+    if(name.value = "") {
+      alert("이름을 입력하세요.");
+      name.focus();
+      return false;
     }
-    else{
-        document.getElementById("nameError").innerHTML=""
+    if(phone.value = "") {
+      alert("전화번호를 입력하세요,");
+      phone.focus();
+      return false;
     }
-
-    //나머지는 요소 유효확인은 추후 구현
-
-
+    if(mbti.value = "") {
+      alert("mbti 를 입력하세요.");
+      mbti.focus();
+      return false;
+    }
+    if(email.value = "") {
+      alert("이메일을 입력하세요.");
+      email.focus();
+      return false;
+    }
+    else if(!email.include('@')) {
+        alert("이메일 형식이 잘못되었습니다.");
+    }
+    else if(student_id.value = "") {
+      alert("학번을 입력하세요");
+      student_id.focus();
+      return false;
+    }
 }

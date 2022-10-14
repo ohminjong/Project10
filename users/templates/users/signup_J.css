@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    width: 50%;
+    width: 40%;
 }
 
 input{
@@ -45,7 +45,7 @@ div {
     color: black;
 }
 .username input {
-    width: 100%;
+    width: 30%;
 }
 .email input {
     width: 100%;

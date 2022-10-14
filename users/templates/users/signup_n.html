@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>회원가입 페이지</title>
+  <link href="signup_J.css" rel="stylesheet" />
+<title>회원가입 폼</title>
+
+<script>
+
+	// 유효성 검사
+	function check(){
+		var username = document.getElementById("username");
+		var password = document.getElementById("password");
+		var name = document.getElementById("name");
+		var phone = document.getElementById("phone");
+		var mbti = document.getElementById("mbti");
+		var email = document.getElementById("email");
+    var student_id = document.getElementById("student_id")
+    var profile_img = document.getElementById("profile_img")
+
+		if(username.value == ""){
+			alert("ID를 입력 하세요.");
+			username.focus();
+			return false;
+		}
+		if(password.value == ""){
+			alert("비밀번호를 입력 하세요.");
+			password.focus();
+			return false;
+		}
+    if(name.value == ""){
+      alert("이름을 입력 하세요.");
+      name.focus();
+      return false;
+    }
+    if(mbti.value == ""){
+      alert("mbti 을 입력 하세요.");
+      mbti.focus();
+      return false;
+    }
+    if(phone.value == ""){
+      alert("전화번호를 입력 하세요.");
+      phone.focus();
+      return false;
+    }
+    if(email.value == ""){
+      alert("이메일을 입력 하세요.");
+      email.focus();
+      return false;
+    }
+    if(student_id.value == ""){
+      alert("학번을 입력 하세요.");
+      student_id.focus();
+      return false;
+    }
+	}
+</script>
+
+</head>
+<body>
+
+<form method="POST" onSubmit="return check()" enctype="multipart/form-data">
+  <div class="row mt-5">
+      <div class="col-12">
+    <div class="row mt-5">
+        <div class="title"><h1 style="font-size: 25px;">회원가입</h1></div>
+    </div>
+    {%csrf_token%}
+    <div class="username">
+      <label for="username" class="form-label">ID</label><br>
+      <input type="text" class="form-control" id="username" name="username" placeholder="아이디" autofocus="autofocus">
+      <div id="usernameError" class="error"></div>
+    </div>
+    <div class="password">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
+      <div id="passwordError" class="error"></div>
+    </div>
+    <div class="name">
+        <label for="name" class="form-label">이름</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="이름">
+        <div id="nameError" class="error"></div>
+    </div>
+    <div class="phone">
+        <label for="phone" class="form-label">전화번호</label>
+        <input type="text" class="form-control" id="phone" name="" placeholder="전화번호">
+        <div id="phoneError" class="error"></div>
+    </div>
+
+    <div class="mbti">
+        <label for="mbti" class="form-label">MBTI</label>
+        <input type="text" class="form-control" id="mbti" placeholder="MBTI">
+        <div id="mbtiError" class="error"></div>
+    </div>
+    <p style = "text-align: right;">MBTI를 모르실 경우, MBTI 검사를 받고 적기 바랍니다.
+        <a href=https://www.16personalities.com/ko/%EB%AC%B4%EB%A3%8C-%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95-%EA%B2%80%EC%82%AC>
+            MBTI 검사 사이트
+        </a>
+    </p>
+    <div class="email">
+        <label for="email" class="form-label">이메일</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        <div id="emailError" class="error"></div>
+    </div>
+    <div class="student_id">
+        <label for="student_id" class="form-label">학번</label>
+        <input type="text" class="form-control" id="student_id" name="student_id" placeholder="학번">
+        <div id="student_id_Error" class="error"></div>
+    </div>
+
+    <div class="profile_img">
+        <label for="student_id" class="form-label">인증파일</label>
+        <input type="file" class="form-control" name="profile_img" id="profile_img">
+        <div id="profile_img_Error" class="error"></div>
+    </div>
+    <div class="submit_button">
+        <input type="submit" value="회원가입" class="btn btn-primary">
+        <input type="reset" value="취소">
+    </div>
+</div>
+</div>
+</form>
+
+</body>
+</html>
